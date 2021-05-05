@@ -10,7 +10,7 @@ import java.util.List;
 
 public class RepositorioDosAlunosEmMemoria implements RepositorioDeAlunos {
 
-    private List<Aluno> matriculados = new ArrayList<>();
+    private final List<Aluno> matriculados = new ArrayList<>();
 
     @Override
     public void matricular(Aluno aluno) {
@@ -22,7 +22,7 @@ public class RepositorioDosAlunosEmMemoria implements RepositorioDeAlunos {
         return this.matriculados.stream()
                 .filter(aluno -> aluno.getCpf().equals(cpf.getNumero()))
                 .findFirst()
-                .orElseThrow(()-> new AlunoNaoEncontrado(cpf));
+                .orElseThrow(() -> new AlunoNaoEncontrado(cpf));
     }
 
     @Override

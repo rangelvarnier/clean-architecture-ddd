@@ -1,6 +1,5 @@
 package br.com.hot.escola.infra;
 
-import br.com.hot.escola.dominio.aluno.AlunoNaoEncontrado;
 import br.com.hot.escola.dominio.aluno.*;
 
 import java.sql.Connection;
@@ -31,7 +30,7 @@ public class RepositorioDeAlunosComJDBC implements RepositorioDeAlunos {
 
             sql = "insert into telefone values(?, ?)";
             ps = connection.prepareStatement(sql);
-            for (Telefone telefone: aluno.getTelefones()) {
+            for (Telefone telefone : aluno.getTelefones()) {
                 ps.setString(1, telefone.getDdd());
                 ps.setString(2, telefone.getNumero());
                 ps.execute();
@@ -49,7 +48,7 @@ public class RepositorioDeAlunosComJDBC implements RepositorioDeAlunos {
             ps.setString(1, cpf.getNumero());
 
             ResultSet resultSet = ps.executeQuery();
-            if(!resultSet.next()){
+            if (!resultSet.next()) {
                 throw new AlunoNaoEncontrado(cpf);
             }
 
@@ -63,7 +62,7 @@ public class RepositorioDeAlunosComJDBC implements RepositorioDeAlunos {
             ps.setLong(1, id);
             resultSet = ps.executeQuery();
 
-            while (resultSet.next()){
+            while (resultSet.next()) {
                 String ddd = resultSet.getString("ddd");
                 String numero = resultSet.getString("numero");
                 aluno.adicionarTelefone(ddd, numero);
