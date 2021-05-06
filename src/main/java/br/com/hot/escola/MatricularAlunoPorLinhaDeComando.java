@@ -1,10 +1,10 @@
 package br.com.hot.escola;
 
-import br.com.hot.escola.aplicacao.aluno.matricular.MatricularAluno;
-import br.com.hot.escola.aplicacao.aluno.matricular.MatricularAlunoDto;
-import br.com.hot.escola.dominio.eventodedominio.PublicadorDeEventos;
-import br.com.hot.escola.dominio.aluno.LogDeAlunoMatriculado;
-import br.com.hot.escola.infra.RepositorioDosAlunosEmMemoria;
+import br.com.hot.escola.academico.aplicacao.aluno.matricular.MatricularAluno;
+import br.com.hot.escola.academico.aplicacao.aluno.matricular.MatricularAlunoDto;
+import br.com.hot.escola.academico.dominio.eventodedominio.PublicadorDeEventos;
+import br.com.hot.escola.academico.dominio.aluno.LogDeAlunoMatriculado;
+import br.com.hot.escola.academico.infra.RepositorioDosAlunosEmMemoria;
 
 public class MatricularAlunoPorLinhaDeComando {
 
