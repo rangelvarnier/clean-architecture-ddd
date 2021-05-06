@@ -2,7 +2,7 @@ package br.com.hot.escola.academico.aplicacao.aluno.matricular;
 
 import br.com.hot.escola.academico.dominio.eventodedominio.PublicadorDeEventos;
 import br.com.hot.escola.academico.dominio.aluno.Aluno;
-import br.com.hot.escola.academico.dominio.aluno.CPF;
+import br.com.hot.escola.sharedkernel.dominio.CPF;
 import br.com.hot.escola.academico.dominio.aluno.LogDeAlunoMatriculado;
 import br.com.hot.escola.academico.infra.RepositorioDosAlunosEmMemoria;
 import org.junit.jupiter.api.BeforeEach;

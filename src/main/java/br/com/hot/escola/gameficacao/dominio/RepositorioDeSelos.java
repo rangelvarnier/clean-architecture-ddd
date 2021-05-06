@@ -1,6 +1,6 @@
 package br.com.hot.escola.gameficacao.dominio;
 
-import br.com.hot.escola.academico.dominio.aluno.CPF;
+import br.com.hot.escola.sharedkernel.dominio.CPF;
 
 import java.util.List;
 

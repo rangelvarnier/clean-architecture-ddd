@@ -1,6 +1,6 @@
 package br.com.hot.escola.gameficacao.infra;
 
-import br.com.hot.escola.academico.dominio.aluno.CPF;
+import br.com.hot.escola.sharedkernel.dominio.CPF;
 import br.com.hot.escola.gameficacao.dominio.RepositorioDeSelos;
 import br.com.hot.escola.gameficacao.dominio.Selo;
 import br.com.hot.escola.gameficacao.dominio.SeloNaoEncontradoException;

@@ -1,5 +1,7 @@
 package br.com.hot.escola.academico.dominio.aluno;
 
+import br.com.hot.escola.sharedkernel.dominio.CPF;
+
 public class FabricaDeAluno {
     private Aluno aluno;
 

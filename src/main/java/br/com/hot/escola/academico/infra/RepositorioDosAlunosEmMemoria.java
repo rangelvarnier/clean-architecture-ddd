@@ -2,7 +2,7 @@ package br.com.hot.escola.academico.infra;
 
 import br.com.hot.escola.academico.dominio.aluno.Aluno;
 import br.com.hot.escola.academico.dominio.aluno.AlunoNaoEncontradoException;
-import br.com.hot.escola.academico.dominio.aluno.CPF;
+import br.com.hot.escola.sharedkernel.dominio.CPF;
 import br.com.hot.escola.academico.dominio.aluno.RepositorioDeAlunos;
 
 import java.util.ArrayList;

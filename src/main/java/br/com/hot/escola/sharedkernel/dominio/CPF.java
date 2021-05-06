@@ -1,4 +1,4 @@
-package br.com.hot.escola.academico.dominio.aluno;
+package br.com.hot.escola.sharedkernel.dominio;
 
 public class CPF {
 

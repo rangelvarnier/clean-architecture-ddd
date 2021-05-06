@@ -1,6 +1,6 @@
-package br.com.hot.escola.academico.dominio;
+package br.com.hot.escola.sharedkernel.dominio;
 
-import br.com.hot.escola.academico.dominio.aluno.CPF;
+import br.com.hot.escola.sharedkernel.dominio.CPF;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
