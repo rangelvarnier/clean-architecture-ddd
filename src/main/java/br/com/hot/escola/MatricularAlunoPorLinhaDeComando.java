@@ -2,6 +2,8 @@ package br.com.hot.escola;
 
 import br.com.hot.escola.aplicacao.aluno.matricular.MatricularAluno;
 import br.com.hot.escola.aplicacao.aluno.matricular.MatricularAlunoDto;
+import br.com.hot.escola.dominio.eventodedominio.PublicadorDeEventos;
+import br.com.hot.escola.dominio.aluno.LogDeAlunoMatriculado;
 import br.com.hot.escola.infra.RepositorioDosAlunosEmMemoria;
 
 public class MatricularAlunoPorLinhaDeComando {
@@ -13,7 +15,10 @@ public class MatricularAlunoPorLinhaDeComando {
 
         MatricularAlunoDto alunoDto = new MatricularAlunoDto(nome, email, cpf);
 
-        MatricularAluno matricularAluno = new MatricularAluno(new RepositorioDosAlunosEmMemoria());
+        PublicadorDeEventos publicador = new PublicadorDeEventos();
+        publicador.adicionar(new LogDeAlunoMatriculado());
+
+        MatricularAluno matricularAluno = new MatricularAluno(new RepositorioDosAlunosEmMemoria(), publicador);
         matricularAluno.executa(alunoDto);
     }
 }

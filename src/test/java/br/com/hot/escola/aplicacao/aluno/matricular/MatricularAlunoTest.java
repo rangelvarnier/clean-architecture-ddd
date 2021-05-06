@@ -1,7 +1,9 @@
 package br.com.hot.escola.aplicacao.aluno.matricular;
 
+import br.com.hot.escola.dominio.eventodedominio.PublicadorDeEventos;
 import br.com.hot.escola.dominio.aluno.Aluno;
 import br.com.hot.escola.dominio.aluno.CPF;
+import br.com.hot.escola.dominio.aluno.LogDeAlunoMatriculado;
 import br.com.hot.escola.infra.RepositorioDosAlunosEmMemoria;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -15,8 +17,12 @@ class MatricularAlunoTest {
 
     @BeforeEach
     void setUp() {
+
+        PublicadorDeEventos publicador = new PublicadorDeEventos();
+        publicador.adicionar(new LogDeAlunoMatriculado());
+
         repositorio = new RepositorioDosAlunosEmMemoria();
-        useCasematricularAluno = new MatricularAluno(repositorio);
+        useCasematricularAluno = new MatricularAluno(repositorio, publicador);
     }
 
     @Test
@@ -30,7 +36,7 @@ class MatricularAlunoTest {
 
         Aluno alunoPersistido = repositorio.buscarPorCPF(new CPF(cpf));
 
-        assertEquals(cpf, alunoPersistido.getCpf());
+        assertEquals(cpf, alunoPersistido.getCpf().getNumero());
         assertEquals(nome, alunoPersistido.getNome());
         assertEquals(email, alunoPersistido.getEmail());
     }
