@@ -2,9 +2,12 @@ package br.com.hot.escola;
 
 import br.com.hot.escola.academico.aplicacao.aluno.matricular.MatricularAluno;
 import br.com.hot.escola.academico.aplicacao.aluno.matricular.MatricularAlunoDto;
-import br.com.hot.escola.academico.dominio.eventodedominio.PublicadorDeEventos;
 import br.com.hot.escola.academico.dominio.aluno.LogDeAlunoMatriculado;
 import br.com.hot.escola.academico.infra.RepositorioDosAlunosEmMemoria;
+import br.com.hot.escola.gameficacao.aplicacao.GeraSeloAlunoNovato;
+import br.com.hot.escola.gameficacao.infra.RepositorioDeSelosEmMemoria;
+import br.com.hot.escola.sharedkernel.dominio.CPF;
+import br.com.hot.escola.sharedkernel.evento.PublicadorDeEventos;
 
 public class MatricularAlunoPorLinhaDeComando {
 
@@ -17,8 +20,12 @@ public class MatricularAlunoPorLinhaDeComando {
 
         PublicadorDeEventos publicador = new PublicadorDeEventos();
         publicador.adicionar(new LogDeAlunoMatriculado());
+        RepositorioDeSelosEmMemoria repositorioDeSelos = new RepositorioDeSelosEmMemoria();
+        publicador.adicionar(new GeraSeloAlunoNovato(repositorioDeSelos));
 
         MatricularAluno matricularAluno = new MatricularAluno(new RepositorioDosAlunosEmMemoria(), publicador);
         matricularAluno.executa(alunoDto);
+
+        System.out.println(repositorioDeSelos.buscarPorCpf(new CPF(cpf)));
     }
 }

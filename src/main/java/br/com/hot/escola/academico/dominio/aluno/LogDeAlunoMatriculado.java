@@ -1,7 +1,7 @@
 package br.com.hot.escola.academico.dominio.aluno;
 
-import br.com.hot.escola.academico.dominio.eventodedominio.Evento;
-import br.com.hot.escola.academico.dominio.eventodedominio.Ouvinte;
+import br.com.hot.escola.sharedkernel.evento.Evento;
+import br.com.hot.escola.sharedkernel.evento.Ouvinte;
 
 import java.time.format.DateTimeFormatter;
 

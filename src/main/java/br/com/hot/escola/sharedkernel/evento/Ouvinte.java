@@ -1,4 +1,4 @@
-package br.com.hot.escola.academico.dominio.eventodedominio;
+package br.com.hot.escola.sharedkernel.evento;
 
 public abstract class Ouvinte {
     

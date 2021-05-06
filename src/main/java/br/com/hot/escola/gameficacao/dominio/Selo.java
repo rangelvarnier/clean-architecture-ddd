@@ -3,8 +3,8 @@ package br.com.hot.escola.gameficacao.dominio;
 import br.com.hot.escola.sharedkernel.dominio.CPF;
 
 public class Selo {
-    private CPF cpf;
-    private String nome;
+    private final CPF cpf;
+    private final String nome;
 
     public Selo(CPF cpf, String nome) {
         this.cpf = cpf;
@@ -17,5 +17,10 @@ public class Selo {
 
     public String getNome() {
         return nome;
+    }
+
+    @Override
+    public String toString() {
+        return "Selo: " + nome;
     }
 }
