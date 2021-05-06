@@ -49,7 +49,7 @@ public class RepositorioDeAlunosComJDBC implements RepositorioDeAlunos {
 
             ResultSet resultSet = ps.executeQuery();
             if (!resultSet.next()) {
-                throw new AlunoNaoEncontrado(cpf);
+                throw new AlunoNaoEncontradoException(cpf);
             }
 
             String nome = resultSet.getString("nome");

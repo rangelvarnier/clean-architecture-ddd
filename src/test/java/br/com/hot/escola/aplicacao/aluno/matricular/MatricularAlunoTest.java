@@ -24,7 +24,7 @@ class MatricularAlunoTest {
         String cpf = "123.456.789-00";
         String nome = "juca";
         String email = "juca@mail.com";
-        
+
         MatricularAlunoDto alunoDto = new MatricularAlunoDto(nome, email, cpf);
         useCasematricularAluno.executa(alunoDto);
 

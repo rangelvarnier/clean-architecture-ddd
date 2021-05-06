@@ -3,6 +3,7 @@ package br.com.hot.escola.dominio.aluno;
 import java.util.ArrayList;
 import java.util.List;
 
+//AGGREGATE ROOT
 public class Aluno {
 
     private CPF cpf;
@@ -21,7 +22,11 @@ public class Aluno {
         this.email = email;
     }
 
+    // regra de negocio, invariante, ou seja os dados devem ser validos
     public void adicionarTelefone(String ddd, String numero) {
+        if(telefones.size() == 2){
+            throw new LimiteMaximoTelefonesException();
+        }
         this.telefones.add(new Telefone(ddd, numero));
     }
 

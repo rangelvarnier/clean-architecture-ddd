@@ -1,5 +1,7 @@
 package br.com.hot.escola.dominio.aluno;
 
+import java.util.Optional;
+
 public class FabricaDeAluno {
     private Aluno aluno;
 
